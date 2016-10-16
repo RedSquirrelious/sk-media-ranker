@@ -1,0 +1,43 @@
+<div class="column">
+	<a href="/movies"><h1>Movies!</h1></a>
+	<div class="row">		
+		<% @movies.each do |movie| %>
+			<article class="column">
+				<div class="card">
+					<div class="media-info">
+						<ul>
+							<li>Rank: <%= movie.votes.count %> </li>
+							<li><%= link_to(movie.title, show_path(movie.id)) %></li>
+							<li>By: <%=movie.maker %></li>
+		<!-- <li>Description: <%= movie.description %></li> -->
+						</ul>
+					</div>
+					<br class="clear-card">
+<!-- voting buttons				 -->
+					<div class="buttons">
+						<ul class="row small-up-2 medium-up-4">
+							<li class="column">
+								<%= link_to(image_tag("/assets/upvote_cupid_dart_heart.png"), image_path(upvote_path(movie.id)), action: :upvote, method: :post) %>
+							</li>
+							<!-- edit button -->
+							<li class="column">
+								<%= link_to(image_tag("/assets/edit_pencil.png"), image_path(edit_path(movie.id)), method: :get, action: :edit) %>
+							</li>	
+							<!-- delete buttons -->	
+							<li class="column">
+								<%= link_to(image_tag("/assets/delete_recycle.png"), image_path(delete_path(movie.id)), method: :delete, action: :destroy, data: {confirm: "Are you sure you want to destroy this beautiful example of cinematography?"}) %>
+							</li>
+							<li class="column">
+								<%= link_to(image_tag("/assets/downvote_broken_heart.png"), image_path(downvote_path(movie.id)), method: :post, action: :downvote) %>
+							</li>
+						</ul>
+					</div>
+					<br class="clear-card">
+				</div>
+			</article>
+		<% end %>
+	</div>
+	<div class="add-buttons">
+	<%= link_to(image_tag("/assets/add_movie.png"), image_path(new_path(kind: 'movie')), action: :new, method: :get) %>
+	</div>
+</div>
