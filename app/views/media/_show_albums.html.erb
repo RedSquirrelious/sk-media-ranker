@@ -1,0 +1,57 @@
+<div class="column">
+
+	<div class="row">
+		<header class="column">
+			<a href="/albums"><h1>Albums!</h1></a>
+		</header>
+
+		<% @albums.each do |album| %>
+
+			<article class="column">
+				<div class="card">
+					<div class="media-info"
+<!-- item info -->
+						<ul>
+							<li>
+								Rank: <%= album.votes.count %> 
+							</li>
+							<li>
+								<%= link_to(album.title, show_path(album.id)) %>
+								
+							</li>
+							<li>
+								By: <%=album.maker %>
+							</li>
+							<!-- <li>Description: <%= album.description %>
+							</li> -->
+	<!-- voting buttons				 -->
+						</ul>
+					</div>
+					<br class="clear-card">
+					<div class="buttons">
+						<ul class="row small-up-2 medium-up-4">
+							<li class="column">
+								<%= link_to(image_tag("/assets/upvote_cupid_dart_heart.png"), image_path(upvote_path(album.id)), action: :upvote, method: :post) %>
+							</li>
+							<!-- edit button -->
+							<li class="column">
+								<%= link_to(image_tag("/assets/edit_pencil.png"), image_path(edit_path(album.id)), method: :get, action: :edit) %>
+							</li>
+							<!-- delete buttons -->	
+							<li class="column">
+								<%= link_to(image_tag("/assets/delete_recycle.png"), image_path(delete_path(album.id)), method: :delete, action: :destroy, data: {confirm: "Are you sure you want to destroy this beautiful music?"}) %>
+							</li>
+							<li class="column">
+								<%= link_to(image_tag("/assets/downvote_broken_heart.png"), image_path(downvote_path(album.id)), method: :post, action: :downvote) %>
+							</li>
+						</ul>
+					</div>
+					<br class="clear-card">
+				</div>
+			</article>
+		<% end %>
+	</div>
+	<div class="add-buttons">
+	<%= link_to(image_tag("/assets/add_album.png"), image_path(new_path(kind: 'album')), action: :new, method: :get) %>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+harold_and_maude:
+  kind: 'movie'
+  title: 'Harold and Maude'
+  maker: 'Hal Ashby'
+  description: 'A beautiful love story'
+
+
+flowers_in_the_attic:
+  kind: 'book'
+  title: 'Flowers in the Attic'
+  maker: 'VC Andrews'
+  description: 'Creepy story about abuse and incest'
+
+flood:
+  kind: 'album'
+  title: 'Flood'
+  maker: 'They Might Be Giants'
+  description: 'Something listened to for hours on end'

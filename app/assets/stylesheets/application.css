@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header.set-header {
+	background: #F0AB19;
+	border-bottom: solid black;
+}
+
+img.set-header  {
+	width: 100%;
+	vertical-align: middle;
+	margin-left: 0;
+}
+
+.set-header ul {
+	list-style: none;
+	font-size: 1.5rem;
+}
+
+h1.set-header {
+	font-family: verdana;
+	margin-top: .2em;
+	margin-bottom: .2em
+}
+
+.column a h1 {
+	margin-top: .2em;
+	margin-bottom: .2em;
+	margin: .2em 0 .05em .2em;
+}
+
+h1 {
+	color: black;
+}
+
+.card {
+  display: block;
+  margin: 1%;
+  padding: 2%;
+  padding-left: 3.5%;
+  /*background-color: #119fc2;*/
+  /*color: white;*/
+  border: solid black;
+  min-height: 10em;
+}
+
+.clear-card {
+	clear:both;
+}
+div.media-info {
+	min-height: 6.5em;
+	/*border: solid red;*/
+	/*padding: 0;*/
+}
+
+.media-info ul, .buttons ul {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: .25em;
+	font-size: 1rem;
+}
+
+
+div.buttons {
+	min-height: 2em;
+	padding-top: .25em;
+	/*padding-right: .05em;*/
+	/*border: solid black;*/
+}
+
+div.buttons img {
+	max-height: 2rem;
+}
+
+.buttons img:nth-child(2) {
+	max-height: 1rem;
+}
+
+.add-buttons img {
+	max-height: 4rem;
+}

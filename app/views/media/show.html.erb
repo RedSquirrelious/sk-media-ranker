@@ -1,0 +1,44 @@
+<article class="column">
+	<h1>This One Medium</h1>
+		
+	<div class="card">
+		<div class="media-info"
+<!-- item info -->
+			<ul>
+				<li>
+					Rank: <%= @my_medium.votes.count %> 
+				</li>
+				<li>
+					<%= link_to(@my_medium.title, show_path(@my_medium.id)) %>
+					
+				</li>
+				<li>
+					By: <%=@my_medium.maker %>
+				</li>
+				<li>Description: <%= @my_medium.description %>
+				</li> 
+<!-- voting buttons				 -->
+			</ul>
+		</div>
+		<div class="buttons">
+			<ul class="row small-up-2 medium-up-4">
+				<li class="column">
+					<%= link_to(image_tag("/assets/upvote_cupid_dart_heart.png"), image_path(upvote_path(@my_medium.id)), action: :upvote, method: :post) %>
+				</li>
+				<!-- edit button -->
+				<li class="column">
+					<%= link_to(image_tag("/assets/edit_pencil.png"), image_path(edit_path(@my_medium.id)), method: :get, action: :edit) %>
+				</li>
+				<!-- delete buttons -->	
+				<li class="column">
+					<%= link_to(image_tag("/assets/delete_recycle.png"), image_path(delete_path(@my_medium.id)), method: :delete, action: :destroy, data: {confirm: "Are you sure you want to destroy this beautiful music?"}) %>
+				</li>
+				<li class="column">
+					<%= link_to(image_tag("/assets/downvote_broken_heart.png"), image_path(downvote_path(@my_medium.id)), method: :post, action: :downvote) %>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+</article>
