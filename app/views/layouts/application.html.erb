@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SkMediaRanker</title>
+  <title>MediaRanker</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="stylesheets/foundation.css">
+    <link rel="stylesheet" href="stylesheets/application.css">
 </head>
 <body>
+	<header class="set-header">
+		<nav>
+    	<ul class="row">
+      	<li class="small-3 columns">
+        	<a href="/">
+					<img src="/assets/totorochu_pikatoro.png" class="set-header">
+					</a>
+				</li>
+				<li class="small-9 columns">
+					<h1 class="set-header">PIKATORO + TOTOROCHU: Favorite Favs</h1>
+				</li>
+			</ul>
+		</nav>
 
+	</header>
+	
 <%= yield %>
 
 </body>
