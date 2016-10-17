@@ -101,8 +101,6 @@ class MediaController < ApplicationController
     @my_medium = Medium.find(params[:id])
     if @my_medium.votes.count >= 1
       @my_medium.votes.first.destroy
-    else
-      redirect_to(index_path), notice: "It's already at '0'. You can't downvote it further."
     end
     redirect_to(index_path)
   end
