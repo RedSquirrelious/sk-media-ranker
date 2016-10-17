@@ -109,11 +109,11 @@ class MediaController < ApplicationController
     if @my_medium.votes.count >= 1
       @my_medium.votes.first.destroy
     else
-      begin
+      # begin
         flash[:notice] = "You can't vote this #{@my_medium.kind} any lower. It's already at '0.'"
-        raise "An error has occurred."
-      rescue
-      end
+      #   raise "An error has occurred."
+      # rescue
+      # end
     end
     redirect_to(index_path)
   end
