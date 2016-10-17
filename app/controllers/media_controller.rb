@@ -102,7 +102,7 @@ class MediaController < ApplicationController
     if @my_medium.votes.count >= 1
       @my_medium.votes.first.destroy
     else
-      @error = "It's already at '0'. You can't downvote it further."
+      redirect_to(index_path), notice: "It's already at '0'. You can't downvote it further."
     end
     redirect_to(index_path)
   end
