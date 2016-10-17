@@ -36,9 +36,14 @@ class MediaController < ApplicationController
 
   def show
     @my_medium = Medium.find(params[:id])
-      if @my_medium == nil
-      render :file => 'public/404.html',
-          :status => :not_found
+      
+#chris's idea
+    if @my_medium == nil
+      flash[:notice] = "That item does not exist."
+      redirect_to action: "index"
+      # if @my_medium == nil
+      # render :file => 'public/404.html',
+      #     :status => :not_found
     end  
   end
 
@@ -77,7 +82,9 @@ class MediaController < ApplicationController
     if @my_medium.save
       redirect_to index_path
     else
-      @error = "Did not save successfully. Try again!"
+      flash[:notice] = "Did not save successfully. Try again!"
+#maybe??
+      redirect_to update_path
     end   
     @post_method = :put
     @post_path = update_path 
@@ -103,7 +110,7 @@ class MediaController < ApplicationController
       @my_medium.votes.first.destroy
     else
       begin
-        puts "You can't vote this #{@my_medium.kind} any lower. It's already at '0.'"
+        flash[:notice] = "You can't vote this #{@my_medium.kind} any lower. It's already at '0.'"
         raise "An error has occurred."
       rescue
       end
